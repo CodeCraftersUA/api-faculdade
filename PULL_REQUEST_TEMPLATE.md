@@ -14,4 +14,4 @@
 - [ ] perf - alteração que melhorou a performance do sistema.
 - [ ] chore - mudanças no projeto que não afetem o sistema ou arquivos de testes.
 - [ ] build - mudanças que afetam o processo de build do projeto ou dependências externas.
-- [ ] revert - reverão de um commit anterior.
+- [ ] revert - reversão de um commit anterior.
