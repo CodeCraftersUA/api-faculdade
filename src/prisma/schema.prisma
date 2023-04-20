@@ -11,3 +11,9 @@ model professors {
   id   BigInt  @id(map: "tb_professores_pkey") @default(autoincrement())
   name String? @db.VarChar
 }
+
+model course {
+  name    String @db.VarChar(100)
+  id      BigInt @id @default(autoincrement())
+  acronym String @db.VarChar(6)
+}
