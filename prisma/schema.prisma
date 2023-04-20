@@ -13,7 +13,7 @@ model professors {
 }
 
 model course {
-  name    String @db.VarChar(100)
-  id      BigInt @id @default(autoincrement())
-  acronym String @db.VarChar(6)
+  id      String @id @db.VarChar(36)
+  name    String @unique @db.VarChar(100)
+  acronym String @unique @db.VarChar(6)
 }

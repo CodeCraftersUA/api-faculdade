@@ -6,10 +6,8 @@ import GetCourseUseCase from "./GetCourseUseCase.js";
 
 class GetCoursesController {
   handler = async (req: Request, res: Response) => {
-    const courseId = parseInt(req.params.id);
-
     const getCourseUseCase = new GetCourseUseCase();
-    const course = await getCourseUseCase.execute(courseId);
+    const course = await getCourseUseCase.execute(req.params.id);
 
     res.status(200).json(course);
   }

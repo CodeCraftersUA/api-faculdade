@@ -7,7 +7,7 @@ import UpdateCourseUseCase from "./UpdateCourseUseCase.js";
 class UpdateCourseController {
   handler = async (req: Request, res: Response) => {
     const updateCourseUseCase = new UpdateCourseUseCase();
-    await updateCourseUseCase.execute(parseInt(req.params.id), req.body);
+    await updateCourseUseCase.execute(req.params.id, req.body);
 
     res.sendStatus(200);
   }

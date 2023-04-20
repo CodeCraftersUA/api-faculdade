@@ -7,7 +7,7 @@ import CourseInterface from "../../../../models/courses.js";
 const prisma = new PrismaClient();
 
 class UpdateCourseUseCase {
-  execute = async (id: number, course: CourseInterface) => {
+  execute = async (id: string, course: CourseInterface) => {
     await prisma.course.update({
       where: { id },
       data: {

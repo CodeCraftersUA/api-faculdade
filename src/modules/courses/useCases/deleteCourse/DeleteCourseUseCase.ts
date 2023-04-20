@@ -8,7 +8,7 @@ import { RECORD_TO_DELETE_DOES_NOT_EXIST } from "../../../../errors/prismaErrors
 const prisma = new PrismaClient();
 
 class DeleteCourseUseCase {
-  execute = async (id: number) => {
+  execute = async (id: string) => {
     try {
       await prisma.course.delete({
         where: { id }

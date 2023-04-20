@@ -10,7 +10,7 @@ import formatBigInt from "../../../../helpers/formatBigInt.js";
 const prisma = new PrismaClient()
 
 class GetCoursesUseCase {
-  execute = async (id: number) => {
+  execute = async (id: string) => {
     const course = await prisma.course.findFirst({
       where: { id }
     });
