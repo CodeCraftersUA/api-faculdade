@@ -8,6 +8,7 @@ class CreateCourseController {
   handler = async (req: Request, res: Response) => {
     const createCourseUseCase = new CreateCourseUseCase();
     await createCourseUseCase.execute(req.body);
+
     res.sendStatus(201);
   }
 }
