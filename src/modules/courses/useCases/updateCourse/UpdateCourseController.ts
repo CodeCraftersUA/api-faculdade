@@ -8,6 +8,7 @@ class UpdateCourseController {
   handler = async (req: Request, res: Response) => {
     const updateCourseUseCase = new UpdateCourseUseCase();
     await updateCourseUseCase.execute(parseInt(req.params.id), req.body);
+
     res.sendStatus(200);
   }
 }
