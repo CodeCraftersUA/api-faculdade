@@ -3,6 +3,9 @@ import express from "express";
 import dotenv from "dotenv";
 import "express-async-errors";
 
+// Middlewares
+import { handleAppErrors } from "./middlewares/handleAppErrors.js";
+
 // Routes
 import courseRoutes from "./routes/coursesRoutes.js";
 
@@ -15,6 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Use routes
 app.use("/courses", courseRoutes);
+
+// Default middlewares
+app.use(handleAppErrors);
 
 const start = () => {
   try {
