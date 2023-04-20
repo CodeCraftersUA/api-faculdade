@@ -1,0 +1,1 @@
+export const RECORD_TO_DELETE_DOES_NOT_EXIST = "Record to delete does not exist.";

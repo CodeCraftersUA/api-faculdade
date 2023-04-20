@@ -1,13 +1,24 @@
 // Dependencies
 import { PrismaClient } from '@prisma/client';
 
+// Errors
+import AppError from '../../../../errors/AppError.js';
+import { RECORD_TO_DELETE_DOES_NOT_EXIST } from "../../../../errors/prismaErrorsCauses.js";
+
 const prisma = new PrismaClient();
 
 class DeleteCourseUseCase {
   execute = async (id: number) => {
-    await prisma.course.delete({
-      where: { id }
-    });
+    try {
+      await prisma.course.delete({
+        where: { id }
+      });
+    } catch (err) {
+      if (err.meta.cause === RECORD_TO_DELETE_DOES_NOT_EXIST)
+        throw new AppError("Course does not exist", 404);
+
+      throw err;
+    }
   }
 }
 
