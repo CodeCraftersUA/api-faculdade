@@ -11,13 +11,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const start = () => {
-  try {
-    app.listen(PORT, () => {
-      console.log(`API running at: http://localhost:${PORT}`);
-    });
-  } catch (err) {
-    console.error(err);
-    process.exit();
-  }
+	try {
+		app.listen(PORT, () => {
+			console.log(`API running at: http://localhost:${PORT}`);
+		});
+	} catch (err) {
+		console.error(err);
+		process.exit();
+	}
 };
 start();
+
+
