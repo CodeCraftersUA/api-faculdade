@@ -2,7 +2,7 @@
 import { PrismaClient } from "@prisma/client";
 
 // Interfaces
-import ProfessorInterface from "../../../../models/professors";
+import ProfessorInterface from "../../../../models/professors.js";
 
 const prisma = new PrismaClient();
 
