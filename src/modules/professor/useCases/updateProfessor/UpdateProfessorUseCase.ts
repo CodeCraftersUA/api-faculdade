@@ -13,7 +13,7 @@ class UpdateProfessorUseCase {
 			data: {
 				name: professor.name,
 				address: professor.address,
-                specialty: professor.specialty
+				specialty: professor.specialty
 			}
 		});
 	};
