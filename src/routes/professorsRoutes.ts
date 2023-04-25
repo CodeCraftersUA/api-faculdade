@@ -3,27 +3,27 @@ import express from "express";
 
 // Controllers
 import CreateProfessorController from "../modules/professor/useCases/createProfessor/CreateProfessorController";
-//import DeleteCourseController from "../modules/courses/useCases/deleteCourse/DeleteCourseController.js";
-//import GetCourseController from "../modules/courses/useCases/getCourse/GetCourseController.js";
-//import ListCoursesController from "../modules/courses/useCases/listCourses/ListCoursesController.js";
-//import UpdateCourseController from "../modules/courses/useCases/updateCourse/UpdateCourseController.js";
+import DeleteProfessorController from "../modules/professor/useCases/deleteProfessor/DeleteProfessorController.js";
+import GetProfessorController from "../modules/professor/useCases/getProfessor/GetProfessorController.js";
+import ListProfessorController from "../modules/professor/useCases/listProfessor/ListProfessorController.js";
+import UpdateProfessorController from "../modules/professor/useCases/updateProfessor/UpdateProfessorController.js";
 
 // Middlewares
-//import postCourseValidate from "../middlewares/validations/courses/postCourseValidation.js";
-//import putCourseValidate from "../middlewares/validations/courses/putCourseValidation.js";
+//import postProfessorValidate from "../middlewares/validations/professors/postProfessorsValidation.js";
+//import putProfessorValidate from "../middlewares/validations/professors/putProfessorsValidation.js";
 
 const app = express();
 
 const createProfessorController = new CreateProfessorController();
-//const deleteCourseController = new DeleteCourseController();
-//const getCourseController = new GetCourseController();
-//const listCourseController = new ListCoursesController();
-//const updateCourseController = new UpdateCourseController();
+const deleteProfessorController = new DeleteProfessorController();
+const getProfessorController = new GetProfessorController();
+const listProfessorController = new ListProfessorController();
+const updateProfessorController = new UpdateProfessorController();
 
-//app.get("", listCourseController.handler);
-//app.get("/:id", getCourseController.handler);
+app.get("", listProfessorController.handler);
+app.get("/:id", getProfessorController.handler);
 app.post("", createProfessorController.handler);
-//app.put("/:id", putCourseValidate, updateCourseController.handler);
-//app.delete("/:id", deleteCourseController.handler);
+app.put("/:id", updateProfessorController.handler);
+app.delete("/:id", deleteProfessorController.handler);
 
 export default app;

@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Use routes
-app.use("/courses", professorRoutes);
+app.use("/professors", professorRoutes);
 
 // Default middlewares
 //app.use(handleAppErrors);
