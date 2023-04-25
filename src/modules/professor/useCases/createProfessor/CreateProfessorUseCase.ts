@@ -21,7 +21,7 @@ class CreateProfessorUseCase {
 					id: generateUniqueId(),
 					name: professor.name,
 					address: professor.address,
-                    specialty: professor.specialty
+					specialty: professor.specialty
 				}
 			});
 		} catch (err) {
