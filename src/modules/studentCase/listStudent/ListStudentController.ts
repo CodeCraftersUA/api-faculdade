@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import ListStudentUseCase from "./ListStudentUseCase.ts";
+import ListStudentUseCase from "./ListStudentUseCase";
 
 class ListStudentController {
 	handler = async (req: Request, res: Response) => {

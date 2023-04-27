@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import StudentInterface from "../../../models/student.ts";
+import StudentInterface from "../../../models/student";
 
 const prisma = new PrismaClient();
 

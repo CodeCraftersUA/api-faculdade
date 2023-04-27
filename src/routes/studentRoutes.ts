@@ -1,13 +1,14 @@
 import express from "express";
 
-import CreateStudentController from "../modules/studentCase/createStudent/CreateStudentController.ts";
-import DeleteStudentController from "../modules/studentCase/deleteStudent/DeleteStudentController.ts";
-import GetStudentController from "../modules/studentCase/getStudent/GetStudentController.ts";
-import ListstudentCaseController from "../modules/studentCase/liststudentCase/ListStudentController.ts";
-import UpdateStudentController from "../modules/studentCase/updateStudent/UpdateStudentController.ts";
+import CreateStudentController from "../modules/studentCase/createStudent/CreateStudentController";
+import DeleteStudentController from "../modules/studentCase/deleteStudent/DeleteStudentController";
+import GetStudentController from "../modules/studentCase/getStudent/getStudentController";
+import ListStudentCaseController from "../modules/studentCase/listStudent/ListStudentController";
+import UpdateStudentController from "../modules/studentCase/updateStudent/UpdateStudentController";
 
-import postStudentValidate from "../middlewares/validations/studentCase/postStudentValidation.ts";
-import putStudentValidate from "../middlewares/validations/studentCase/putStudentValidation.ts";
+import postStudentValidate from "../middlewares/validations/students/postStudentValidation";
+import putStudentValidate from "../middlewares/validations/students/putStudentValidation";
+import ListStudentController from "../modules/studentCase/listStudent/ListStudentController";
 
 const app = express();
 

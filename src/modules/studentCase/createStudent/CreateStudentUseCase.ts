@@ -2,6 +2,10 @@ import { PrismaClient } from "@prisma/client";
 
 // Interface
 import StudentInterface from "../../../models/student";
+import generateUniqueId from "../../../helpers/generateUniqueId";
+import { KEY_ALREADY_EXISTS } from "../../../errors/prismaErrorsCodes";
+
+import AppError from "../../../errors/AppError";
 
 const prisma = new PrismaClient();
 

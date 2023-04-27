@@ -12,3 +12,10 @@ model course {
   name    String @unique @db.VarChar(100)
   acronym String @unique @db.VarChar(6)
 }
+
+model student {
+  id      String @id @db.VarChar(36)
+  name    String @unique @db.VarChar(100)
+  age     Int
+  address    String @db.VarChar(100)
+}

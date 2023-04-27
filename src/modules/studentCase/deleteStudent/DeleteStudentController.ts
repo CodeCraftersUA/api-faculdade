@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 
 // UseCases
-import DeleteStudentUseCase from "./DeleteStudentUseCase.ts";
+import DeleteStudentUseCase from "./DeleteStudentUseCase";
 
-class DeletestudentController {
+class DeleteStudentController {
 	handler = async (req: Request, res: Response) => {
 		const deleteStudentUseCase = new DeleteStudentUseCase();
 		await deleteStudentUseCase.execute(req.params.id);
