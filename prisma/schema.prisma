@@ -8,12 +8,12 @@ datasource db {
 }
 
 model professors {
-  id      String @id @db.VarChar(36)
-  name      String?  @db.VarChar
+  id        String   @id @db.VarChar(36)
+  name      String  @db.VarChar
   address   String[] @db.VarChar(200)
   specialty String[] @db.VarChar(70)
-  }
-  
+}
+
 model course {
   id      String @id @db.VarChar(36)
   name    String @unique @db.VarChar(100)
