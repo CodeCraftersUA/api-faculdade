@@ -10,7 +10,7 @@ class DeleteCourseController {
 		await deleteCourseUseCase.execute(req.params.id);
 
 		res.sendStatus(204);
-	}
+	};
 }
 
 export default DeleteCourseController;
