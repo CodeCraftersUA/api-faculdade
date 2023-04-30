@@ -4,9 +4,6 @@ import { PrismaClient } from "@prisma/client";
 // Error
 import AppError from "../../../../errors/AppError.js";
 
-// Helpers
-import formatBigInt from "../../../../helpers/formatBigInt.js";
-
 const prisma = new PrismaClient();
 
 class GetCoursesUseCase {
@@ -15,7 +12,7 @@ class GetCoursesUseCase {
 			where: { id }
 		});
 
-		if (course) return formatBigInt(course);
+		if (course) return course;
 		throw new AppError("Course ID not found", 404);
 	};
 }
