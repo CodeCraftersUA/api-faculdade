@@ -1,5 +1,5 @@
 export default interface student {
     name: string,
-    age: string,
+    age: Number,
     address: string
 }

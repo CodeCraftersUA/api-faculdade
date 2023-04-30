@@ -1,8 +1,10 @@
 import { PrismaClient } from "@prisma/client";
+import AppError from "../../../errors/AppError";
+import { RECORD_TO_DELETE_DOES_NOT_EXIST } from "../../../errors/prismaErrorsCodes";
 
 const prisma = new PrismaClient();
 
-class DeletestudentUseCase {
+class DeleteStudentUseCase {
 	execute = async (id: string) => {
 		try {
 			await prisma.student.delete({

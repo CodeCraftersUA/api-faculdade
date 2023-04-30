@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 // Interface
-import StudentInterface from "../../../models/student";
+import StudentInterface from "../../../models/students";
 import generateUniqueId from "../../../helpers/generateUniqueId";
 import { KEY_ALREADY_EXISTS } from "../../../errors/prismaErrorsCodes";
 
