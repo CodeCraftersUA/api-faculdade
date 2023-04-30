@@ -8,10 +8,10 @@ datasource db {
 }
 
 model professors {
-  id        String   @id @db.VarChar(36)
-  name      String  @db.VarChar
-  address   String[] @db.VarChar(200)
-  specialty String[] @db.VarChar(70)
+  id        String @id @db.VarChar(36)
+  name      String @db.VarChar
+  address   String @db.VarChar(200)
+  specialty String @db.VarChar(70)
 }
 
 model course {
