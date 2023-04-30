@@ -15,8 +15,11 @@ class GetCoursesByParamsUseCase {
 	) => {
 		const course = await prisma.course.findMany({
 			where: {
-				name,
-				acronym
+				name: {
+					contains: name,
+					mode: "insensitive"
+				},
+				acronym,
 			}
 		});
 
