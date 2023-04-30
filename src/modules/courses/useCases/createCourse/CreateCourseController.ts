@@ -10,7 +10,7 @@ class CreateCourseController {
 		await createCourseUseCase.execute(req.body);
 
 		res.sendStatus(201);
-	}
+	};
 }
 
 export default CreateCourseController;
