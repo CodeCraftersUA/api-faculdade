@@ -9,18 +9,19 @@ import generateUniqueId from "../../../../helpers/generateUniqueId.js";
 
 // Interfaces
 import AppError from "../../../../errors/AppError.js";
-import CourseInterface from "../../../../models/courses.js";
+import ProfessorInterface from "../../../../models/professors.js";
 
 const prisma = new PrismaClient();
 
-class CreateCourseUseCase {
-	execute = async (course: CourseInterface) => {
+class CreateProfessorUseCase {
+	execute = async (professor: ProfessorInterface) => {
 		try {
-			await prisma.course.create({
+			await prisma.professors.create({
 				data: {
 					id: generateUniqueId(),
-					name: course.name,
-					acronym: course.acronym
+					name: professor.name,
+					address: professor.address,
+					specialty: professor.specialty
 				}
 			});
 		} catch (err) {
@@ -32,4 +33,4 @@ class CreateCourseUseCase {
 	};
 }
 
-export default CreateCourseUseCase;
+export default CreateProfessorUseCase;

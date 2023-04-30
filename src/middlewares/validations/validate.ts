@@ -6,24 +6,24 @@ import { Schema } from "yup";
 import AppError from "../../errors/AppError.js";
 
 const validate = (schema: Schema) => async (
-  req: Request,
-  res: Response,
-  next: NextFunction
+	req: Request,
+	res: Response,
+	next: NextFunction
 ) => {
-  try {
-    await schema.validate({
-      body: req.body,
-      query: req.query,
-      params: req.params
-    });
+	try {
+		await schema.validate({
+			body: req.body,
+			query: req.query,
+			params: req.params
+		});
 
-    return next();
-  } catch (err) {
-    if (err.path)
-      throw new AppError(`${err.path} is invalid`);
+		return next();
+	} catch (err) {
+		if (err.path)
+			throw new AppError(`${err.path} is invalid`);
 
-    throw err;
-  }
+		throw err;
+	}
 };
 
 export default validate;

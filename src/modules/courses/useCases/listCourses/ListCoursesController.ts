@@ -5,12 +5,12 @@ import { Request, Response } from "express";
 import ListCoursesUseCase from "./ListCoursesUseCase.js";
 
 class ListCoursesController {
-  handler = async (req: Request, res: Response) => {
-    const listCoursesUseCase = new ListCoursesUseCase();
-    const courses = await listCoursesUseCase.execute();
+	handler = async (req: Request, res: Response) => {
+		const listCoursesUseCase = new ListCoursesUseCase();
+		const courses = await listCoursesUseCase.execute();
 
-    res.status(200).json(courses);
-  }
+		res.status(200).json(courses);
+	};
 }
 
 export default ListCoursesController;

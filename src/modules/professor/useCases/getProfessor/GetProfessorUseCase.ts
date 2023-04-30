@@ -9,15 +9,15 @@ import formatBigInt from "../../../../helpers/formatBigInt.js";
 
 const prisma = new PrismaClient();
 
-class GetCoursesUseCase {
+class GetProfessorUseCase {
 	execute = async (id: string) => {
-		const course = await prisma.course.findFirst({
+		const professor = await prisma.professors.findFirst({
 			where: { id }
 		});
 
-		if (course) return formatBigInt(course);
-		throw new AppError("Course ID not found", 404);
+		if (professor) return formatBigInt(professor);
+		throw new AppError("Professor ID not found", 404);
 	};
 }
 
-export default GetCoursesUseCase;
+export default GetProfessorUseCase;
