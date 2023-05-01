@@ -7,22 +7,55 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model professors {
-  id        String @id @db.VarChar(36)
-  name      String @db.VarChar
-  address   String @db.VarChar(200)
-  specialty String @db.VarChar(70)
+model Professor {
+  id         String                   @id @db.VarChar(36)
+  name       String                   @db.VarChar
+  address    String                   @db.VarChar(200)
+  specialty  String                   @db.VarChar(70)
+  classrooms ProfessorsOnClassrooms[]
+
+  @@map("professor")
 }
 
-model course {
-  id      String @id @db.VarChar(36)
-  name    String @unique @db.VarChar(100)
-  acronym String @unique @db.VarChar(6)
+model Course {
+  id         String      @id @db.VarChar(36)
+  name       String      @unique @db.VarChar(100)
+  acronym    String      @unique @db.VarChar(6)
+  classrooms Classroom[]
 }
 
-model student {
-  id      String @id @db.VarChar(36)
-  name    String @db.VarChar(100)
-  age     Int
-  address String @db.VarChar(100)
+model Student {
+  id         String                @id @db.VarChar(36)
+  name       String                @db.VarChar(100)
+  age        Int
+  address    String                @db.VarChar(100)
+  classrooms StudentsOnClassrooms[]
+}
+
+model Classroom {
+  id         String                   @id @db.VarChar(36)
+  semester   Int
+  year       Int
+  professors ProfessorsOnClassrooms[]
+  students   StudentsOnClassrooms[]
+  course     Course                   @relation(fields: [courseId], references: [id])
+  courseId   String
+}
+
+model ProfessorsOnClassrooms {
+  professor   Professor @relation(fields: [professorId], references: [id])
+  professorId String    @db.VarChar(36)
+  classroom   Classroom @relation(fields: [classroomId], references: [id])
+  classroomId String    @db.VarChar(36)
+
+  @@id([professorId, classroomId])
+}
+
+model StudentsOnClassrooms {
+  student     Student   @relation(fields: [studentId], references: [id])
+  studentId   String    @db.VarChar(36)
+  classroom   Classroom @relation(fields: [classroomId], references: [id])
+  classroomId String    @db.VarChar(36)
+
+  @@id([studentId, classroomId])
 }
