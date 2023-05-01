@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const courseIdExists = async (courseId: string): Promise<boolean> => {
+const courseExists = async (courseId: string): Promise<boolean> => {
 	const queryResult = await prisma.course.count({
 		where: {
 			id: courseId
@@ -16,4 +16,4 @@ const courseIdExists = async (courseId: string): Promise<boolean> => {
 	return false;
 };
 
-export default courseIdExists;
+export default courseExists;
