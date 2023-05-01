@@ -4,6 +4,7 @@ import { PrismaClient } from "@prisma/client";
 // Error
 import AppError from "../../../../errors/AppError.js";
 
+
 const prisma = new PrismaClient();
 
 class GetProfessorUseCase {
