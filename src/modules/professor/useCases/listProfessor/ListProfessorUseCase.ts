@@ -6,11 +6,11 @@ import formatBigInt from "../../../../helpers/formatBigInt.js";
 
 const prisma = new PrismaClient();
 
-class ListCoursesUseCase {
+class ListProfessorUseCase {
 	execute = async () => {
-		const courses = await prisma.course.findMany();
-		return formatBigInt(courses);
+		const professors = await prisma.professors.findMany();
+		return formatBigInt(professors);
 	};
 }
 
-export default ListCoursesUseCase;
+export default ListProfessorUseCase;

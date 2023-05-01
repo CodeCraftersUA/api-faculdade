@@ -7,6 +7,7 @@ import "express-async-errors";
 import { handleAppErrors } from "./middlewares/handleAppErrors.js";
 
 // Routes
+import professorRoutes from "./routes/professorsRoutes.js";
 import courseRoutes from "./routes/coursesRoutes.js";
 
 dotenv.config(); // Config dotenv
@@ -17,19 +18,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Use routes
+app.use("/professors", professorRoutes);
 app.use("/courses", courseRoutes);
 
 // Default middlewares
 app.use(handleAppErrors);
 
 const start = () => {
-  try {
-    app.listen(PORT, () => {
-      console.log(`API running at: http://localhost:${PORT}`);
-    });
-  } catch (err) {
-    console.error(err);
-    process.exit();
-  }
+	try {
+		app.listen(PORT, () => {
+			console.log(`API running at: http://localhost:${PORT}`);
+		});
+	} catch (err) {
+		console.error(err);
+		process.exit();
+	}
 };
 start();
