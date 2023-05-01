@@ -9,7 +9,7 @@ import generateUniqueId from "../../../../helpers/generateUniqueId.js";
 
 // Interfaces
 import AppError from "../../../../errors/AppError.js";
-import CourseInterface from "../../../../models/courses.js";
+import CourseInterface from "../../../../models/Course.js";
 
 const prisma = new PrismaClient();
 
