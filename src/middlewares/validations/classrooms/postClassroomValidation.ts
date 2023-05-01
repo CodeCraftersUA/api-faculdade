@@ -2,7 +2,7 @@
 import yup from "yup";
 
 // Validations
-import courseIdExist from "../yupTests/courseIdExist.js";
+import courseIdExist from "../yupTests/courseIdExists.js";
 import professorsIdsListIsValid from "../yupTests/professorsIdsListIsValid.js";
 import studentsIdsListIsValid from "../yupTests/studentsIdsListIsValid.js";
 import validate from "../validate.js";
