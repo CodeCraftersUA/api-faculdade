@@ -4,6 +4,7 @@ import { PrismaClient } from "@prisma/client";
 // Interfaces
 import { UpdadateClassroomInterface } from "../../../../models/Classroom.js";
 
+
 const prisma = new PrismaClient();
 
 class UpdateClassroomUseCase {
