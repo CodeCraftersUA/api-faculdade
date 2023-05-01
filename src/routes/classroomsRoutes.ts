@@ -8,6 +8,10 @@ import GetClassroomController from "../modules/classrooms/useCases/getClassroom/
 import ListClassroomsController from "../modules/classrooms/useCases/listClassrooms/ListClassroomsController.js";
 import UpdateClassroomController from "../modules/classrooms/useCases/updateClassroom/UpdateClassroomController.js";
 
+// Middleware
+import postClassroomValidate from "../middlewares/validations/classrooms/postClassroomValidation.js";
+import putClassroomValidate from "../middlewares/validations/classrooms/putClassroomValidate.js";
+
 const app = express();
 
 const createClassroomController = new CreateClassroomController();
@@ -19,7 +23,7 @@ const updateClassroomController = new UpdateClassroomController();
 app.delete("/:id", deleteClassroomController.handler);
 app.get("", listClassroomsController.handler);
 app.get("/:id", getClassroomController.handler);
-app.post("", createClassroomController.handler);
-app.put("/:id", updateClassroomController.handler);
+app.post("", postClassroomValidate, createClassroomController.handler);
+app.put("/:id", putClassroomValidate, updateClassroomController.handler);
 
 export default app;
