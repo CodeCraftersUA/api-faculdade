@@ -20,7 +20,7 @@ class CreateCourseUseCase {
 				data: {
 					id: generateUniqueId(),
 					name: course.name,
-					acronym: course.acronym
+					acronym: course.acronym.toLocaleUpperCase()
 				}
 			});
 		} catch (err) {
