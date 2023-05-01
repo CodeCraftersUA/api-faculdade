@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import AppError from "../../../errors/AppError";
+import formatBigInt from "../../../helpers/formatBigInt";
 
 const prisma = new PrismaClient();
 

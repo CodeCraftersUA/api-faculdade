@@ -1,11 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 
-// Interface
+import AppError from "../../../errors/AppError";
 import StudentInterface from "../../../models/students";
 import generateUniqueId from "../../../helpers/generateUniqueId";
 import { KEY_ALREADY_EXISTS } from "../../../errors/prismaErrorsCodes";
-
-import AppError from "../../../errors/AppError";
 
 const prisma = new PrismaClient();
 

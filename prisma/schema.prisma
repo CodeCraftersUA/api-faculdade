@@ -16,6 +16,6 @@ model course {
 model student {
   id      String @id @db.VarChar(36)
   name    String @db.VarChar(100)
-  age     Number
+  age     Int
   address String @db.VarChar(100)
 }

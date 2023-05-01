@@ -5,12 +5,13 @@ import yup from "yup";
 import validate from "../validate.js";
 
 
-const putCourseSchema = yup.object({
+const putStudentSchema = yup.object({
   body: yup.object({
     name: yup.string().min(5).max(100).required(),
-    acronym: yup.string().min(2).max(5).required(),
+    age: yup.number().required(),
+    address: yup.string().min(5).max(100).required(),
   })
 });
 
-const putCourseValidate = validate(putCourseSchema);
-export default putCourseValidate;
+const putStudentValidate = validate(putStudentSchema);
+export default putStudentValidate;
