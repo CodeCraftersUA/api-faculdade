@@ -1,6 +1,6 @@
 # API-FACULDADE
 
-Atividade mensal (Projeto-2), uma API utilizando Node.js.
+Atividade mensal (Projeto-2), uma API utilizando Node.js, Prisma.io, Postgresql e Yup.
 
 ## Features
 
@@ -30,3 +30,24 @@ Atividade mensal (Projeto-2), uma API utilizando Node.js.
 [Git](https://git-scm.com/) <br />
 [Node.js](https://nodejs.org/en) <br />
 [VSCode](https://code.visualstudio.com/) <br />
+
+### Rodando o Back-end
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/CodeCraftersUA/api-faculdade.git>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd api-faculdade
+
+# Vá para a pasta server
+$ cd server
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev:server
+
+# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+```
