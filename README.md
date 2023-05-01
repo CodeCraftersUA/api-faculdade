@@ -4,25 +4,25 @@ Atividade mensal (Projeto-2), uma API utilizando Node.js.
 
 ## Features
 
-- [] Cadastrar de Professor
-- [] Cadastrar de Turma
-- [] Cadastrar de Curso
-- [] Cadastrar de Aluno
+- [x] Cadastrar de Professor
+- [x] Cadastrar de Turma
+- [x] Cadastrar de Curso
+- [x] Cadastrar de Aluno
 
-- [] Editar Professor
-- [] Editar Turma
-- [] Editar Curso
-- [] Editar Aluno
+- [x] Editar Professor
+- [x] Editar Turma
+- [x] Editar Curso
+- [x] Editar Aluno
 
-- [] Remover Professor
-- [] Remover Turma
-- [] Remover Curso
-- [] Remover Aluno
+- [x] Remover Professor
+- [x] Remover Turma
+- [x] Remover Curso
+- [x] Remover Aluno
 
-- [] Listar Professor
-- [] Listar Turma
-- [] Listar Curso
-- [] Listar Aluno
+- [x] Listar Professor
+- [x] Listar Turma
+- [x] Listar Curso
+- [x] Listar Aluno
 
 ## Pré-requisitos
 
