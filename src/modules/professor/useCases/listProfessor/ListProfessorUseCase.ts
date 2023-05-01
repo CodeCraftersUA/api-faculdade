@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 class ListProfessorUseCase {
 	execute = async () => {
-		const professors = await prisma.professors.findMany();
+		const professors = await prisma.professor.findMany();
 		return professors;
 	};
 }

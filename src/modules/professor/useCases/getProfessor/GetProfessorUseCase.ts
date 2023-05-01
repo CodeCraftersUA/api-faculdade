@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 
 class GetProfessorUseCase {
 	execute = async (id: string) => {
-		const professor = await prisma.professors.findFirst({
+		const professor = await prisma.professor.findFirst({
 			where: { id }
 		});
 

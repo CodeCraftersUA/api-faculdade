@@ -13,7 +13,7 @@ class GetProfessorsByNameOrSpecialtyUseCase {
 			specialty?: string
 		}
 	) => {
-		const professor = await prisma.professors.findMany({
+		const professor = await prisma.professor.findMany({
 			where: {
 				name: {
 					contains: name,

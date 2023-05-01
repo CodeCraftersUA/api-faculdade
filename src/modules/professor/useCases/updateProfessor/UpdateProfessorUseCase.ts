@@ -8,7 +8,7 @@ const prisma = new PrismaClient();
 
 class UpdateProfessorUseCase {
 	execute = async (id: string, professor: ProfessorInterface) => {
-		await prisma.professors.update({
+		await prisma.professor.update({
 			where: { id },
 			data: {
 				name: professor.name,

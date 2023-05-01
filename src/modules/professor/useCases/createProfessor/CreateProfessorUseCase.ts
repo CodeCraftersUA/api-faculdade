@@ -16,7 +16,7 @@ const prisma = new PrismaClient();
 class CreateProfessorUseCase {
 	execute = async (professor: ProfessorInterface) => {
 		try {
-			await prisma.professors.create({
+			await prisma.professor.create({
 				data: {
 					id: generateUniqueId(),
 					name: professor.name,

@@ -10,7 +10,7 @@ const prisma = new PrismaClient();
 class DeleteProfessorUseCase {
 	execute = async (id: string) => {
 		try {
-			await prisma.professors.delete({
+			await prisma.professor.delete({
 				where: { id }
 			});
 		} catch (err) {
