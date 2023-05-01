@@ -9,6 +9,7 @@ import { handleAppErrors } from "./middlewares/handleAppErrors.js";
 // Routes
 import professorRoutes from "./routes/professorsRoutes.js";
 import courseRoutes from "./routes/coursesRoutes.js";
+import studentRoutes from "./routes/studentRoutes.js";
 
 dotenv.config(); // Config dotenv
 const PORT = process.env.PORT || 3000; // API listen port
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 // Use routes
 app.use("/professors", professorRoutes);
 app.use("/courses", courseRoutes);
+app.use("/students", studentRoutes);
 
 // Default middlewares
 app.use(handleAppErrors);

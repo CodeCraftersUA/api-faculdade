@@ -1,9 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 
-import AppError from "../../../errors/AppError";
-import StudentInterface from "../../../models/students";
-import generateUniqueId from "../../../helpers/generateUniqueId";
-import { KEY_ALREADY_EXISTS } from "../../../errors/prismaErrorsCodes";
+import AppError from "../../../errors/AppError.js";
+import StudentInterface from "../../../models/students.js";
+import generateUniqueId from "../../../helpers/generateUniqueId.js";
+import { KEY_ALREADY_EXISTS } from "../../../errors/prismaErrorsCodes.js";
 
 const prisma = new PrismaClient();
 
