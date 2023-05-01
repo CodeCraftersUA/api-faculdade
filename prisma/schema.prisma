@@ -13,6 +13,8 @@ model Professor {
   address    String                   @db.VarChar(200)
   specialty  String                   @db.VarChar(70)
   classrooms ProfessorsOnClassrooms[]
+
+  @@map("professor")
 }
 
 model Course {
@@ -27,7 +29,7 @@ model Student {
   name       String                @db.VarChar(100)
   age        Int
   address    String                @db.VarChar(100)
-  classrooms StudentOnClassrooms[]
+  classrooms StudentsOnClassrooms[]
 }
 
 model Classroom {
@@ -35,7 +37,7 @@ model Classroom {
   semester   Int
   year       Int
   professors ProfessorsOnClassrooms[]
-  students   StudentOnClassrooms[]
+  students   StudentsOnClassrooms[]
   course     Course                   @relation(fields: [courseId], references: [id])
   courseId   String
 }
@@ -49,7 +51,7 @@ model ProfessorsOnClassrooms {
   @@id([professorId, classroomId])
 }
 
-model StudentOnClassrooms {
+model StudentsOnClassrooms {
   student     Student   @relation(fields: [studentId], references: [id])
   studentId   String    @db.VarChar(36)
   classroom   Classroom @relation(fields: [classroomId], references: [id])
