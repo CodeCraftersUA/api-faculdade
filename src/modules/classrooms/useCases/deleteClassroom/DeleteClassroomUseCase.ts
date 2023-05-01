@@ -14,12 +14,16 @@ class DeleteClassroomUseCase {
 				where: { classroomId: id }
 			});
 
-			await prisma.studentOnClassrooms.deleteMany({
+			await prisma.studentsOnClassrooms.deleteMany({
 				where: { classroomId: id }
 			});
 
 			await prisma.classroom.delete({
-				where: { id }
+				where: { id },
+				include: {
+					professors: true,
+					students: true
+				}
 			});
 		} catch (err) {
 			if (err.code === RECORD_TO_DELETE_DOES_NOT_EXIST)
