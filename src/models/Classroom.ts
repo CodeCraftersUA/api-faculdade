@@ -41,4 +41,13 @@ interface ListClassroomsInterface {
 	}[],
 }
 
-export { CreateClassroomInterface, ListClassroomsInterface };
+interface UpdadateClassroomInterface {
+	id: string,
+	semester: number,
+	year: number,
+	professors: string[],
+	students: string[],
+	courseId: string
+}
+
+export { CreateClassroomInterface, ListClassroomsInterface, UpdadateClassroomInterface };
