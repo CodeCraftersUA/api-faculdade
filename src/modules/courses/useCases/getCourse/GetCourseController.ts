@@ -10,7 +10,7 @@ class GetCoursesController {
 		const course = await getCourseUseCase.execute(req.params.id);
 
 		res.status(200).json(course);
-	}
+	};
 }
 
 export default GetCoursesController;
