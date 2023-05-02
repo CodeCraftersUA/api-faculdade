@@ -12,6 +12,7 @@ import UpdateCourseController from "../modules/courses/useCases/updateCourse/Upd
 // Middlewares
 import postCourseValidate from "../middlewares/validations/courses/postCourseValidation.js";
 import putCourseValidate from "../middlewares/validations/courses/putCourseValidation.js";
+import getCourseValidation from "../middlewares/validations/courses/getCourseValidation.js";
 
 const app = express();
 
@@ -24,7 +25,7 @@ const updateCourseController = new UpdateCourseController();
 
 app.get("", listCourseController.handler);
 app.get("/:id", getCourseController.handler);
-app.get("/:id/students", listStudentsByCourseController.handler);
+app.get("/:id/students", getCourseValidation, listStudentsByCourseController.handler);
 app.post("", postCourseValidate, createCourseController.handler);
 app.put("/:id", putCourseValidate, updateCourseController.handler);
 app.delete("/:id", deleteCourseController.handler);
