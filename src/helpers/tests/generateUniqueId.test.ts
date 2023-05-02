@@ -1,13 +1,13 @@
 import { describe, expect, test } from "@jest/globals";
 import generateUniqueId from "../generateUniqueId";
 
-describe("helper generateUniqueId", () => {
-	test("Should generate string", () => {
+describe("on call function", () => {
+	test("should generate string", () => {
 		const randomId = generateUniqueId();
 		expect(typeof randomId).toBe(typeof "string");
 	});
 
-	test("Should always generate different values", () => {
+	test("should always generate different values", () => {
 		const randomIdA = generateUniqueId();
 		const randomIdB = generateUniqueId();
 
