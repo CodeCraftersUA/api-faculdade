@@ -10,7 +10,11 @@ class ListStudentsByCourseUseCase {
 	execute = async (courseId: string) => {
 		const result = await prisma.classroom.findMany({
 			where: {
-				courseId
+				course: {
+					id: {
+						equals: courseId
+					}
+				}
 			},
 			select: {
 				students: {
