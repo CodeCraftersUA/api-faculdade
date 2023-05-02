@@ -7,9 +7,9 @@ import CreateProfessorUseCase from "./CreateProfessorUseCase.ts";
 class CreateProfessorController {
 	handler = async (req: Request, res: Response) => {
 		const createProfessorUseCase = new CreateProfessorUseCase();
-		await createProfessorUseCase.execute(req.body);
+		const newProfessor = await createProfessorUseCase.execute(req.body);
 
-		res.sendStatus(201);
+		res.status(201).json(newProfessor);
 	};
 }
 

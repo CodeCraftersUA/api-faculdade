@@ -16,7 +16,7 @@ const prisma = new PrismaClient();
 class CreateProfessorUseCase {
 	execute = async (professor: ProfessorInterface) => {
 		try {
-			await prisma.professor.create({
+			const newProfessor = await prisma.professor.create({
 				data: {
 					id: generateUniqueId(),
 					name: professor.name,
@@ -24,6 +24,8 @@ class CreateProfessorUseCase {
 					specialty: professor.specialty
 				}
 			});
+
+			return newProfessor;
 		} catch (err) {
 			if (err.code === KEY_ALREADY_EXISTS)
 				throw new AppError(`Attribute ${err.meta.target} already exists`, 400);

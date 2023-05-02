@@ -10,7 +10,7 @@ const getClassroomsDTO = new GetClassroomsDTO();
 
 class GetClassroomUseCase {
 	execute = async (id: string) => {
-		const course = await prisma.classroom.findFirst({
+		const classroom = await prisma.classroom.findFirst({
 			where: { id },
 			include: {
 				course: {
@@ -43,8 +43,8 @@ class GetClassroomUseCase {
 			},
 		});
 
-		if (course) return getClassroomsDTO.execute(course);
-		throw new AppError("Course ID not found", 404);
+		if (classroom) return getClassroomsDTO.execute(classroom);
+		throw new AppError("Classroom ID not found", 404);
 	};
 }
 
