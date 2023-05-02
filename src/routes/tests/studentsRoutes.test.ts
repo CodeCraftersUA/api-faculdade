@@ -13,7 +13,7 @@ beforeAll(async () => {
 		name: specificStudentName,
 		age: 21,
 		address: "Foz do Iguaçu - Paraná"
-	}
+	};
 
 	const response = await request("http://localhost:3000").post("/students").send(studentData);
 	validStudentId = response.body.id;
@@ -23,19 +23,19 @@ beforeAll(async () => {
 afterAll(async () => {
 	await request("http://localhost:3000")
 		.delete(`/students/${validStudentId}`);
-})
+});
 
 // GET Validations
 describe("on list students", (() => {
 	it("should return status 200", async () => {
 		await request("http://localhost:3000")
-			.get(`/students`)
+			.get("/students")
 			.expect(200);
 	});
 
 	it("should return students list", async () => {
 		const response = await request("http://localhost:3000")
-			.get(`/students`)
+			.get("/students")
 			.expect(200);
 
 		expect(response.body[0]).toBeDefined();
@@ -78,7 +78,7 @@ describe("on create student with valid data", (() => {
 			name: "Paulo Costa",
 			age: 25,
 			address: "Foz do Iguaçu - Paraná"
-		}
+		};
 
 		const response = await request("http://localhost:3000")
 			.post("/students")
@@ -98,7 +98,7 @@ describe("on create student with invalid age", (() => {
 			name: "Paulo Costa",
 			age: -10,
 			address: "Foz do Iguaçu - Paraná"
-		}
+		};
 
 		await request("http://localhost:3000")
 			.post("/students")
@@ -113,7 +113,7 @@ describe("on create student with invalid name", (() => {
 			name: "",
 			age: 25,
 			address: "Foz do Iguaçu - Paraná"
-		}
+		};
 
 		await request("http://localhost:3000")
 			.post("/students")
@@ -128,7 +128,7 @@ describe("on create student with invalid address", (() => {
 			name: "Paulo Costa",
 			age: 25,
 			address: ""
-		}
+		};
 
 		await request("http://localhost:3000")
 			.post("/students")
@@ -143,7 +143,7 @@ describe("on update student that exists with valid data", (() => {
 		name: "Nome de Teste",
 		age: 50,
 		address: "Curitiba - Paraná"
-	}
+	};
 
 	it("should return status 200", async () => {
 		await request("http://localhost:3000")
@@ -168,7 +168,7 @@ describe("on update student that does not exist", (() => {
 		name: "Nome de Teste",
 		age: 50,
 		address: "Curitiba - Paraná"
-	}
+	};
 
 	it("should return status 400", async () => {
 		await request("http://localhost:3000")
@@ -183,7 +183,7 @@ describe("on update student that exists with invalid age", (() => {
 		name: "Nome de Teste",
 		age: -50,
 		address: "Curitiba - Paraná"
-	}
+	};
 
 	it("should return status 400", async () => {
 		await request("http://localhost:3000")
@@ -198,7 +198,7 @@ describe("on update student that exists with invalid name", (() => {
 		name: "",
 		age: 50,
 		address: "Curitiba - Paraná"
-	}
+	};
 
 	it("should return status 400", async () => {
 		await request("http://localhost:3000")
@@ -208,12 +208,12 @@ describe("on update student that exists with invalid name", (() => {
 	});
 }));
 
-describe("on update student that exists with invalid data", (() => {
+describe("on update student that exists with invalid address", (() => {
 	const invalidStudentData = {
 		name: "Nome de Teste",
 		age: 50,
 		address: ""
-	}
+	};
 
 	it("should return status 400", async () => {
 		await request("http://localhost:3000")
@@ -230,7 +230,7 @@ describe("on delete student that exists", (() => {
 			name: "Paulo Costa",
 			age: 25,
 			address: "Foz do Iguaçu - Paraná"
-		}
+		};
 
 		const response = await request("http://localhost:3000")
 			.post("/students")
