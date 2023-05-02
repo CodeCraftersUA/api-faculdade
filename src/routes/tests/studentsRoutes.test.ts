@@ -61,6 +61,7 @@ describe("on get student that exists", (() => {
 
 		expect(response.body).toHaveProperty("id");
 		expect(response.body).toHaveProperty("age");
+		expect(response.body).toHaveProperty("name");
 		expect(response.body).toHaveProperty("address");
 	});
 }));
@@ -159,6 +160,7 @@ describe("on update student that exists with valid data", (() => {
 
 		expect(response.body).toHaveProperty("id");
 		expect(response.body.age).toBe(updatedStudentData.age);
+		expect(response.body.name).toBe(updatedStudentData.name);
 		expect(response.body.address).toBe(updatedStudentData.address);
 	});
 }));
