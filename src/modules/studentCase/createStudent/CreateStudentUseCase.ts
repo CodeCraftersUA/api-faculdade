@@ -10,7 +10,7 @@ const prisma = new PrismaClient();
 class CreateStudentUseCase {
 	execute = async (student: StudentInterface) => {
 		try {
-			await prisma.student.create({
+			const newStudent = await prisma.student.create({
 				data: {
 					id: generateUniqueId(),
 					name: student.name,
@@ -18,6 +18,8 @@ class CreateStudentUseCase {
 					address: student.address
 				}
 			});
+
+			return newStudent;
 		} catch (err) {
 			if (err.code === KEY_ALREADY_EXISTS)
 				throw new AppError(`Attribute ${err.meta.target} already exists`, 400);
