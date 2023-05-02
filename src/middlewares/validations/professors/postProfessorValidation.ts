@@ -2,7 +2,7 @@
 import yup from "yup";
 
 // Validate
-import validate from "../validate.js";
+import validate from "../validate.ts";
 
 
 const postProfessorSchema = yup.object({

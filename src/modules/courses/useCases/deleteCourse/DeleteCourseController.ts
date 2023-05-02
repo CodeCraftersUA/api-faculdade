@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 
 // UseCases
-import DeleteCourseUseCase from "./DeleteCourseUseCase.js";
+import DeleteCourseUseCase from "./DeleteCourseUseCase.ts";
 
 class DeleteCourseController {
 	handler = async (req: Request, res: Response) => {

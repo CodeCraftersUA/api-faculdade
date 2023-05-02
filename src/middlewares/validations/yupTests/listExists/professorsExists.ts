@@ -2,7 +2,7 @@
 import { PrismaClient } from "@prisma/client";
 
 // Helpers
-import containsDuplicates from "../../../../helpers/containsDuplicates.js";
+import containsDuplicates from "../../../../helpers/containsDuplicates.ts";
 
 const prisma = new PrismaClient();
 

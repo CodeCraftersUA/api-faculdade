@@ -2,8 +2,8 @@
 import yup from "yup";
 
 // Validate
-import courseExists from "../yupTests/exists/courseExists.js";
-import validate from "../validate.js";
+import courseExists from "../yupTests/exists/courseExists.ts";
+import validate from "../validate.ts";
 
 const putCourseSchema = yup.object({
 	body: yup.object({

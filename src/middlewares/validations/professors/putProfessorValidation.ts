@@ -2,8 +2,8 @@
 import yup from "yup";
 
 // Validate
-import professorExists from "../yupTests/exists/professorExists.js";
-import validate from "../validate.js";
+import professorExists from "../yupTests/exists/professorExists.ts";
+import validate from "../validate.ts";
 
 
 const putProfessorSchema = yup.object({

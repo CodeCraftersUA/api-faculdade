@@ -2,15 +2,15 @@
 import express from "express";
 
 // Controllers
-import CreateProfessorController from "../modules/professor/useCases/createProfessor/CreateProfessorController.js";
-import DeleteProfessorController from "../modules/professor/useCases/deleteProfessor/DeleteProfessorController.js";
-import GetProfessorController from "../modules/professor/useCases/getProfessor/GetProfessorController.js";
-import ListProfessorController from "../modules/professor/useCases/listProfessor/ListProfessorController.js";
-import UpdateProfessorController from "../modules/professor/useCases/updateProfessor/UpdateProfessorController.js";
+import CreateProfessorController from "../modules/professor/useCases/createProfessor/CreateProfessorController.ts";
+import DeleteProfessorController from "../modules/professor/useCases/deleteProfessor/DeleteProfessorController.ts";
+import GetProfessorController from "../modules/professor/useCases/getProfessor/GetProfessorController.ts";
+import ListProfessorController from "../modules/professor/useCases/listProfessor/ListProfessorController.ts";
+import UpdateProfessorController from "../modules/professor/useCases/updateProfessor/UpdateProfessorController.ts";
 
 // Middlewares
-import postProfessorValidate from "../middlewares/validations/professors/postProfessorValidation.js";
-import putProfessorValidate from "../middlewares/validations/professors/putProfessorValidation.js";
+import postProfessorValidate from "../middlewares/validations/professors/postProfessorValidation.ts";
+import putProfessorValidate from "../middlewares/validations/professors/putProfessorValidation.ts";
 
 const app = express();
 

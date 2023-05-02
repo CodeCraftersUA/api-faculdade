@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 
 // UseCases
-import CreateClassroomUseCase from "./CreateClassroomUseCase.js";
+import CreateClassroomUseCase from "./CreateClassroomUseCase.ts";
 
 class CreateClassroomController {
 	handler = async (req: Request, res: Response): Promise<void> => {

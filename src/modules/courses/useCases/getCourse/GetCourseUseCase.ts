@@ -2,7 +2,7 @@
 import { PrismaClient } from "@prisma/client";
 
 // Error
-import AppError from "../../../../errors/AppError.js";
+import AppError from "../../../../errors/AppError.ts";
 
 const prisma = new PrismaClient();
 

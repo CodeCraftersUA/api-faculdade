@@ -1,9 +1,8 @@
 // Dependencies
-import yup from "yup";
+import * as yup from "yup";
 
 // Validate
-import validate from "../validate.js";
-
+import validate from "../validate.ts";
 
 const postCourseSchema = yup.object({
 	body: yup.object({

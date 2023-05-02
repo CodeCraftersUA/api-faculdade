@@ -2,7 +2,7 @@
 import { PrismaClient } from "@prisma/client";
 
 // DTOS
-import GetClassroomsDTO from "../../dtos/IGetClassroomsDTO.js";
+import GetClassroomsDTO from "../../dtos/IGetClassroomsDTO.ts";
 
 const prisma = new PrismaClient();
 const getClassroomsDTO = new GetClassroomsDTO();

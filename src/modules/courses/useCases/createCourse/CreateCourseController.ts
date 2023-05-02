@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 
 // UseCases
-import CreateCourseUseCase from "./CreateCourseUseCase.js";
+import CreateCourseUseCase from "./CreateCourseUseCase.ts";
 
 class CreateCourseController {
 	handler = async (req: Request, res: Response) => {

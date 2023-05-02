@@ -2,8 +2,8 @@
 import { PrismaClient } from "@prisma/client";
 
 // Error
-import AppError from "../../../../errors/AppError.js";
-import GetClassroomsDTO from "../../dtos/IGetClassroomsDTO.js";
+import AppError from "../../../../errors/AppError.ts";
+import GetClassroomsDTO from "../../dtos/IGetClassroomsDTO.ts";
 
 const prisma = new PrismaClient();
 const getClassroomsDTO = new GetClassroomsDTO();

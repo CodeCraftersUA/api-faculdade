@@ -2,14 +2,14 @@
 import { PrismaClient } from "@prisma/client";
 
 // Errors
-import { KEY_ALREADY_EXISTS } from "../../../../errors/prismaErrorsCodes.js";
+import { KEY_ALREADY_EXISTS } from "../../../../errors/prismaErrorsCodes.ts";
 
 // Helpers
-import generateUniqueId from "../../../../helpers/generateUniqueId.js";
+import generateUniqueId from "../../../../helpers/generateUniqueId.ts";
 
 // Interfaces
-import AppError from "../../../../errors/AppError.js";
-import { CreateClassroomInterface } from "../../../../models/Classroom.js";
+import AppError from "../../../../errors/AppError.ts";
+import { CreateClassroomInterface } from "../../../../models/Classroom.ts";
 
 const prisma = new PrismaClient();
 
