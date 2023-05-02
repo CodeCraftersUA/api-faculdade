@@ -2,15 +2,15 @@
 import express from "express";
 
 // Controllers
-import CreateClassroomController from "../modules/classrooms/useCases/createClassroom/CreateClassroomController.js";
-import DeleteClassroomController from "../modules/classrooms/useCases/deleteClassroom/DeleteClassroomController.js";
-import GetClassroomController from "../modules/classrooms/useCases/getClassroom/GetClassroomController.js";
-import ListClassroomsController from "../modules/classrooms/useCases/listClassrooms/ListClassroomsController.js";
-import UpdateClassroomController from "../modules/classrooms/useCases/updateClassroom/UpdateClassroomController.js";
+import CreateClassroomController from "../modules/classrooms/useCases/createClassroom/CreateClassroomController.ts";
+import DeleteClassroomController from "../modules/classrooms/useCases/deleteClassroom/DeleteClassroomController.ts";
+import GetClassroomController from "../modules/classrooms/useCases/getClassroom/GetClassroomController.ts";
+import ListClassroomsController from "../modules/classrooms/useCases/listClassrooms/ListClassroomsController.ts";
+import UpdateClassroomController from "../modules/classrooms/useCases/updateClassroom/UpdateClassroomController.ts";
 
 // Middleware
-import postClassroomValidate from "../middlewares/validations/classrooms/postClassroomValidation.js";
-import putClassroomValidate from "../middlewares/validations/classrooms/putClassroomValidate.js";
+import postClassroomValidate from "../middlewares/validations/classrooms/postClassroomValidation.ts";
+import putClassroomValidate from "../middlewares/validations/classrooms/putClassroomValidate.ts";
 
 const app = express();
 

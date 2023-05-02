@@ -2,21 +2,26 @@
 import { PrismaClient } from "@prisma/client";
 
 // Errors
-import { KEY_ALREADY_EXISTS } from "../../../../errors/prismaErrorsCodes.js";
+import { KEY_ALREADY_EXISTS } from "../../../../errors/prismaErrorsCodes.ts";
 
 // Helpers
-import generateUniqueId from "../../../../helpers/generateUniqueId.js";
+import generateUniqueId from "../../../../helpers/generateUniqueId.ts";
 
 // Interfaces
-import AppError from "../../../../errors/AppError.js";
-import { CreateClassroomInterface } from "../../../../models/Classroom.js";
+import AppError from "../../../../errors/AppError.ts";
+import { CreateClassroomInterface } from "../../../../models/Classroom.ts";
+
+// DTOS
+import GetClassroomsDTO from "../../dtos/IGetClassroomsDTO.ts";
+
+const getClassroomsDTO = new GetClassroomsDTO();
 
 const prisma = new PrismaClient();
 
 class CreateClassroomUseCase {
-	execute = async (classroom: CreateClassroomInterface): Promise<void> => {
+	execute = async (classroom: CreateClassroomInterface) => {
 		try {
-			await prisma.classroom.create({
+			const newClassroom = await prisma.classroom.create({
 				data: {
 					id: generateUniqueId(),
 					semester: classroom.semester,
@@ -32,8 +37,39 @@ class CreateClassroomUseCase {
 							...classroom.students.map(studentId => ({ studentId }))
 						]
 					}
-				}
+				},
+				include: {
+					course: {
+						select: {
+							id: true,
+							name: true,
+							acronym: true
+						}
+					},
+					professors: {
+						select: {
+							professor: {
+								select: {
+									id: true,
+									name: true,
+								},
+							},
+						},
+					},
+					students: {
+						select: {
+							student: {
+								select: {
+									id: true,
+									name: true,
+								},
+							},
+						},
+					},
+				},
 			});
+
+			return getClassroomsDTO.execute(newClassroom);
 		} catch (err) {
 			if (err.code === KEY_ALREADY_EXISTS)
 				throw new AppError(`Attribute ${err.meta.target} already exists`, 400);

@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
-import AppError from "../../../errors/AppError.js";
-import { RECORD_TO_DELETE_DOES_NOT_EXIST } from "../../../errors/prismaErrorsCodes.js";
+import AppError from "../../../errors/AppError.ts";
+import { RECORD_TO_DELETE_DOES_NOT_EXIST } from "../../../errors/prismaErrorsCodes.ts";
 
 const prisma = new PrismaClient();
 

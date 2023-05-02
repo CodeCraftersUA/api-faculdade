@@ -2,10 +2,10 @@
 import yup from "yup";
 
 // Validations
-import courseIdExist from "../yupTests/exists/courseExists.js";
-import professorsExists from "../yupTests/listExists/professorsExists.js";
-import studentsExists from "../yupTests/listExists/studentsExists.js";
-import validate from "../validate.js";
+import courseIdExist from "../yupTests/exists/courseExists.ts";
+import professorsExists from "../yupTests/listExists/professorsExists.ts";
+import studentsExists from "../yupTests/listExists/studentsExists.ts";
+import validate from "../validate.ts";
 
 
 const postClassroomSchema = yup.object({

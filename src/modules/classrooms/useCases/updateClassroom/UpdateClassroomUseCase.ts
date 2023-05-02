@@ -2,7 +2,7 @@
 import { PrismaClient } from "@prisma/client";
 
 // Interfaces
-import { UpdadateClassroomInterface } from "../../../../models/Classroom.js";
+import { UpdadateClassroomInterface } from "../../../../models/Classroom.ts";
 
 
 const prisma = new PrismaClient();

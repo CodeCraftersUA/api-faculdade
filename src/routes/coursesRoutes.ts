@@ -2,18 +2,18 @@
 import express from "express";
 
 // Controllers
-import CreateCourseController from "../modules/courses/useCases/createCourse/CreateCourseController.js";
-import DeleteCourseController from "../modules/courses/useCases/deleteCourse/DeleteCourseController.js";
-import GetCourseController from "../modules/courses/useCases/getCourse/GetCourseController.js";
-import ListCoursesController from "../modules/courses/useCases/listCourses/ListCoursesController.js";
-import ListProfessorsByCourseController from "../modules/courses/useCases/listProfessorsByCourse/ListProfessorsByCourseController.js";
-import ListStudentsByCourseController from "../modules/courses/useCases/listStudentsByCourse/ListStudentsByCourseController.js";
-import UpdateCourseController from "../modules/courses/useCases/updateCourse/UpdateCourseController.js";
+import CreateCourseController from "../modules/courses/useCases/createCourse/CreateCourseController.ts";
+import DeleteCourseController from "../modules/courses/useCases/deleteCourse/DeleteCourseController.ts";
+import GetCourseController from "../modules/courses/useCases/getCourse/GetCourseController.ts";
+import ListCoursesController from "../modules/courses/useCases/listCourses/ListCoursesController.ts";
+import ListProfessorsByCourseController from "../modules/courses/useCases/listProfessorsByCourse/ListProfessorsByCourseController.ts";
+import ListStudentsByCourseController from "../modules/courses/useCases/listStudentsByCourse/ListStudentsByCourseController.ts";
+import UpdateCourseController from "../modules/courses/useCases/updateCourse/UpdateCourseController.ts";
 
 // Middlewares
-import postCourseValidate from "../middlewares/validations/courses/postCourseValidation.js";
-import putCourseValidate from "../middlewares/validations/courses/putCourseValidation.js";
-import getCourseValidate from "../middlewares/validations/courses/getCourseValidation.js";
+import postCourseValidate from "../middlewares/validations/courses/postCourseValidation.ts";
+import putCourseValidate from "../middlewares/validations/courses/putCourseValidation.ts";
+import getCourseValidate from "../middlewares/validations/courses/getCourseValidation.ts";
 
 const app = express();
 

@@ -1,32 +1,13 @@
 // Dependencies
-import express from "express";
 import dotenv from "dotenv";
-import "express-async-errors";
 
-// Middlewares
-import { handleAppErrors } from "./middlewares/handleAppErrors.js";
-
-// Routes
-import courseRoutes from "./routes/coursesRoutes.js";
-import classroomsRoutes from "./routes/classroomsRoutes.js";
-import professorRoutes from "./routes/professorsRoutes.js";
-import studentRoutes from "./routes/studentsRoutes.js";
+// Utils
+import createServer from "./utils/createServer.ts";
 
 dotenv.config(); // Config dotenv
 const PORT = process.env.PORT || 3000; // API listen port
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Use routes
-app.use("/courses", courseRoutes);
-app.use("/classrooms", classroomsRoutes);
-app.use("/professors", professorRoutes);
-app.use("/students", studentRoutes);
-
-// Default middlewares
-app.use(handleAppErrors);
+const app = createServer();
 
 const start = () => {
 	try {

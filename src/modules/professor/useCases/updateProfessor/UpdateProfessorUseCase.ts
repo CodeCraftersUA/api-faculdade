@@ -2,13 +2,13 @@
 import { PrismaClient } from "@prisma/client";
 
 // Interfaces
-import ProfessorInterface from "../../../../models/Professor.js";
+import ProfessorInterface from "../../../../models/Professor.ts";
 
 const prisma = new PrismaClient();
 
 class UpdateProfessorUseCase {
 	execute = async (id: string, professor: ProfessorInterface) => {
-		await prisma.professor.update({
+		const updatedProfessor = await prisma.professor.update({
 			where: { id },
 			data: {
 				name: professor.name,
@@ -16,6 +16,8 @@ class UpdateProfessorUseCase {
 				specialty: professor.specialty
 			}
 		});
+
+		return updatedProfessor;
 	};
 }
 

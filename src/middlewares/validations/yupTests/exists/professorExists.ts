@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const professorExists = async (professorId: string): Promise<boolean> => {
-	const queryResult = await prisma.student.count({
+	const queryResult = await prisma.professor.count({
 		where: {
 			id: professorId
 		}

@@ -2,8 +2,8 @@
 import { Request, Response } from "express";
 
 // UseCases
-import ListClassroomsUseCase from "./ListClassroomsUseCase.js";
-import ListClassroomsByParamsUseCase from "./ListClassroomsByParamsUseCase.js";
+import ListClassroomsUseCase from "./ListClassroomsUseCase.ts";
+import ListClassroomsByParamsUseCase from "./ListClassroomsByParamsUseCase.ts";
 
 class ListCoursesController {
 	handler = async (req: Request, res: Response) => {
