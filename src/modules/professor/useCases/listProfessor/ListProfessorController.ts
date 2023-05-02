@@ -15,11 +15,11 @@ class ListProfessorController {
 		const querySpecialty = typeof req.query.specialty === "string" ? req.query.specialty : undefined;
 
 		if (req.query.name || req.query.specialty) {
-			const course = await listProfessorsByNameOrSpecialtyUseCase.execute({
+			const professor = await listProfessorsByNameOrSpecialtyUseCase.execute({
 				name: queryName?.toUpperCase(),
 				specialty: querySpecialty?.toUpperCase()
 			});
-			return res.status(200).json(course);
+			return res.status(200).json(professor);
 		}
 
 		const professors = await listProfessorUseCase.execute();

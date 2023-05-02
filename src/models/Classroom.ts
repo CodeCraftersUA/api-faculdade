@@ -1,7 +1,7 @@
 // Interfaces
-import ProfessorInterface from "./professors";
-import StudentInterface from "./Students";
-import CourseInterface from "./Students";
+import ProfessorInterface from "./Professor";
+import StudentInterface from "./Student";
+import CourseInterface from "./Student";
 
 export default interface Classroom {
 	id: string,
