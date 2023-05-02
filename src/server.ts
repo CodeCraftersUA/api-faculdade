@@ -10,8 +10,7 @@ import { handleAppErrors } from "./middlewares/handleAppErrors.js";
 import courseRoutes from "./routes/coursesRoutes.js";
 import classroomsRoutes from "./routes/classroomsRoutes.js";
 import professorRoutes from "./routes/professorsRoutes.js";
-import courseRoutes from "./routes/coursesRoutes.js";
-import studentRoutes from "./routes/studentRoutes.js";
+import studentRoutes from "./routes/studentsRoutes.js";
 
 dotenv.config(); // Config dotenv
 const PORT = process.env.PORT || 3000; // API listen port

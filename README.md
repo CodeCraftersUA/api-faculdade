@@ -1,6 +1,6 @@
 # API-FACULDADE
 
-Atividade mensal (Projeto-2), uma API utilizando Node.js, Prisma.io, Postgresql e Yup.
+Atividade mensal (Projeto-2), uma API utilizando Node.js, Prisma.io, Postgresql, Yup e Express.
 
 ## Features
 
@@ -47,7 +47,8 @@ $ cd server
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
+$ npm run dev
 
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+# O servidor inciará na porta:3333 - acesse <http://localhost:3000>
 ```
+
