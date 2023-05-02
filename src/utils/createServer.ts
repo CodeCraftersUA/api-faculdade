@@ -1,5 +1,6 @@
 // Dependencies
 import express from "express";
+import cors from "cors";
 import "express-async-errors";
 
 // Middlewares
@@ -13,6 +14,13 @@ import studentRoutes from "../routes/studentsRoutes.ts";
 
 const createServer = () => {
 	const app = express();
+
+	app.use((req, res, next) => {
+		res.header("Access-Control-Allow-Origin", "*");
+		res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+		app.use(cors());
+		next();
+	});
 
 	app.use(express.json());
 	app.use(express.urlencoded({ extended: true }));
