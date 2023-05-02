@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 import AppError from "../../../errors/AppError.js";
-import StudentInterface from "../../../models/students.js";
+import StudentInterface from "../../../models/Students.js";
 import generateUniqueId from "../../../helpers/generateUniqueId.js";
 import { KEY_ALREADY_EXISTS } from "../../../errors/prismaErrorsCodes.js";
 
