@@ -5,3 +5,11 @@ export default interface professor {
   // eslint-disable-next-line semi
 }
 
+interface GetProfessorInterface {
+  id: string,
+  name: string,
+  specialty: string,
+  address: string
+}
+
+export { GetProfessorInterface };
