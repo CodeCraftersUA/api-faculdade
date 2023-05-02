@@ -115,7 +115,7 @@ describe("on create course with invalid name", (() => {
 describe("on create course with name that already exist", (() => {
 	it("should return 400", async () => {
 		const courseData = {
-			name: "Engenharia de Espuma",
+			name: specificCourseName,
 			acronym: "RRR"
 		};
 
@@ -130,7 +130,7 @@ describe("on create course with acronym that already exist", (() => {
 	it("should return 400", async () => {
 		const courseData = {
 			name: "Engenharia de Espuma",
-			acronym: "ENG4"
+			acronym: "GFRTS"
 		};
 
 		await request("http://localhost:3000")
